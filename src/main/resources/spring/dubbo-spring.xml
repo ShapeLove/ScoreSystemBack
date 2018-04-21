@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    <dubbo:application name="database-api"/>
+    <dubbo:reference id="scoreService" interface="com.shp.service.ScoreService" check="false" url="${database.url}" retries="3"/>
+    <dubbo:reference id="userService" interface="com.shp.service.UserService" check="false"  url="${database.url}" retries="3"/>
+    <dubbo:reference id="roleService" interface="com.shp.service.RoleService" check="false" url="${database.url}" retries="3"/>
+    <dubbo:reference id="permissionService" interface="com.shp.service.PermissionService" check="false"  url="${database.url}" retries="3"/>
+</beans>
